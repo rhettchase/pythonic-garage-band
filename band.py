@@ -74,3 +74,9 @@ class Band:
     @classmethod
     def to_list(cls):
         return cls.instances # returns the list of Band instances
+    
+    def __str__(self):
+        return ' '.join([str(member) for member in self.members])
+    
+    def __repr__(self):
+        return f"Band instance. Name = {self.name}"
