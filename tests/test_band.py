@@ -122,7 +122,7 @@ def test_band_members(one_band):
     assert one_band.members[2].name == "Dave Grohl"
 
 
-@pytest.mark.skip("todo")
+# @pytest.mark.skip("todo")
 def test_play_solos_for_whole_band(one_band):
     solos = one_band.play_solos()
     assert len(solos) == 3
@@ -153,16 +153,16 @@ def test_to_list():
 #######################
 
 
-# @pytest.fixture
-# def nirvana_data():
-#     return {
-#         "name": "Nirvana",
-#         "members": [
-#             {"name": "Kurt Cobain", "instrument": "Guitar"},
-#             {"name": "Krist Novoselic", "instrument": "Bass"},
-#             {"name": "Dave Grohl", "instrument": "Drums"},
-#         ],
-#     }
+@pytest.fixture
+def nirvana_data():
+    return {
+        "name": "Nirvana",
+        "members": [
+            {"name": "Kurt Cobain", "instrument": "Guitar"},
+            {"name": "Krist Novoselic", "instrument": "Bass"},
+            {"name": "Dave Grohl", "instrument": "Drums"},
+        ],
+    }
 
 
 @pytest.fixture
@@ -178,15 +178,15 @@ def one_band():
     return some_band
 
 
-# @pytest.fixture(autouse=True)
-# def clean():
-#     """runs before each test automatically.
-#     This is necessary because otherwise band instances added in one test
-#     will bleed over to other tests
-#     There's also a more advanced way to run code after each test as well
-#     Check the docs for that. Hint: it uses yield
-#     """
-#     Band.instances = []
+@pytest.fixture(autouse=True)
+def clean():
+    """runs before each test automatically.
+    This is necessary because otherwise band instances added in one test
+    will bleed over to other tests
+    There's also a more advanced way to run code after each test as well
+    Check the docs for that. Hint: it uses yield
+    """
+    Band.instances = []
 
 
 #######################

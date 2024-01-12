@@ -21,7 +21,7 @@ class Guitarist(Musician):
     def __repr__(self):
         return f"Guitarist instance. Name = {self.name}"
 
-class Bassist:
+class Bassist(Musician):
     def __init__(self, name="unknown"):
         self.name = name
         
@@ -64,6 +64,12 @@ class Band:
         
     def add_musician(self, musician):
         self.members.append(musician)
+        
+    def play_solos(self):
+        solos = []
+        for musician in self.members:
+            solos.append(musician.play_solo())
+        return solos
     
     @classmethod
     def to_list(cls):
