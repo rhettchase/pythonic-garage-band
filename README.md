@@ -28,7 +28,7 @@ Garage Band application with Object Oriented Programming. Utilizes Python classe
 
 #### How to initialize/run your application (where applicable)
 
--`python3 madlib.py`
+-`python3 band.py`
 
 #### How to use your library (where applicable)
 
@@ -36,4 +36,4 @@ Garage Band application with Object Oriented Programming. Utilizes Python classe
 
 #### Tests
 
-- Run tests by activating virtual environment and running `pytest -s` command in command line
+- Run tests by activating virtual environment and running `pytest` command in command line
